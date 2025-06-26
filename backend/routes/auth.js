@@ -4,10 +4,16 @@ const User = require('../models/User');
 
 // 📌 Signup route
 router.post('/signup', async (req, res) => {
-  const { email, password } = req.body;
-  const user = new User({ email, password });
-  await user.save();
-  res.send('Signup successful');
+    try{
+        const { email, password } = req.body;
+        const user = new User({ email, password });
+        await user.save();
+        res.send('Signup successful');
+    }
+    catch(error){
+        console.log(error);
+        
+    }
 });
 
 // 📌 Login route

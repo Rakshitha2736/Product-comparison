@@ -36,7 +36,14 @@ function Home() {
           <ul className="product-list">
             {results.map((item, index) => (
               <li key={index} className="product-card">
-                <img src={item.image} alt={item.name} width="200" /><br />
+               <img
+                 src={item.image}
+                alt={item.name}
+  width="200"
+  height="150"
+  style={{ objectFit: 'cover', borderRadius: '8px' }}
+/>
+<br />
                 <strong>{item.name}</strong><br />
                 Price: ₹{item.price}<br />
                 Quality: {item.quality}<br />
